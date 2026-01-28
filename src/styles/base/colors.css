@@ -1,0 +1,30 @@
+/* src/styles/colors.css */
+/* نقلت ألوانك اللي كانت بـ :root (charcoal/mustard/warm-grey) */
+
+@layer base {
+  :root {
+    /* raw rgb channels (مثل اللي عندك) */
+    --background: 229 229 229;
+    --foreground: 0 0 0;
+
+    --charcoal: 26 26 26;
+    --mustard: 200 141 0;
+    --warm-grey: 229 229 229;
+    --black: #1A1A1A;
+    --white: #ffffff;
+    --orange: #C88D00;
+
+
+    /* convenient hex-like aliases if you want */
+    --color-bg: rgb(var(--background));
+    --color-fg: rgb(var(--foreground));
+    --color-charcoal: rgb(var(--charcoal));
+    --color-mustard: rgb(var(--mustard));
+    --color-warm-grey: rgb(var(--warm-grey));
+  }
+
+  body {
+    background-color: var(--color-warm-grey);
+    color: var(--color-fg);
+  }
+}

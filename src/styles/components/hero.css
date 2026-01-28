@@ -1,0 +1,195 @@
+/* =================================================================
+   HERO SECTION COMPONENT STYLES
+   Bold editorial hero with massive typography
+   ================================================================= */
+
+/* Hero Container */
+.ikram-hero {
+  position: relative;
+  min-height: 600px;
+  background-color: var(--color-warm-grey);  /* Changed from charcoal to warm grey for better flow */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.ikram-hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Headline Styles */
+.ikram-hero-headline {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--black);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 0.8s var(--ease-in-out);
+}
+
+.ikram-hero-headline-accent {
+  color: var(--color-mustard);
+  display: block;
+}
+
+/* Subheadline */
+.ikram-hero-subheadline {
+  font-family: Inter, sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ikram-warm-grey);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s 0.2s var(--ease-in-out) backwards;
+}
+
+/* Hero CTA Buttons */
+.ikram-hero-cta-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s 0.4s var(--ease-in-out) backwards;
+}
+
+.ikram-hero-cta {
+  padding: 1rem 2.5rem;
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ikram-hero-cta-primary {
+  background-color: var(--color-mustard);
+  color: var(--black);
+}
+
+.ikram-hero-cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.ikram-hero-cta-primary:hover::before {
+  left: 100%;
+}
+
+.ikram-hero-cta-primary:hover {
+  background-color: var(--orange);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(200, 141, 0, 0.3);
+}
+
+.ikram-hero-cta-secondary {
+  background-color: transparent;
+  color: var(--black);  /* Changed for visibility */
+  border: 2px solid var(--black);
+}
+
+.ikram-hero-cta-secondary:hover {
+  border-color: var(--color-mustard);
+  color: var(--color-mustard);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(200, 141, 0, 0.2);
+}
+
+/* Hero Background Pattern */
+.ikram-hero-bg-pattern {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 60%;
+  height: 100%;
+  opacity: 0.05;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      var(--color-mustard),
+      var(--color-mustard) 2px,
+      transparent 2px,
+      transparent 20px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hero Stats */
+.ikram-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(229, 229, 229, 0.2);
+  animation: fadeInUp 0.8s 0.6s var(--ease-in-out) backwards;
+}
+
+.ikram-hero-stat {
+  text-align: center;
+}
+
+.ikram-hero-stat-value {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-mustard);
+  letter-spacing: -0.02em;
+}
+
+.ikram-hero-stat-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(26, 26, 26, 0.6);  /* Changed for visibility on light background */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ikram-hero {
+    min-height: 500px;
+  }
+
+  .ikram-hero-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .ikram-hero-cta-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .ikram-hero-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ikram-hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}

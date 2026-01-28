@@ -1,0 +1,155 @@
+/* =================================================================
+   CTA SECTION COMPONENT STYLES
+   Call-to-action section with social proof
+   ================================================================= */
+
+/* CTA Container */
+.ikram-cta {
+  padding: 8rem 2rem;
+  background-color: var(--orange);
+  position: relative;
+  overflow: hidden;
+}
+
+.ikram-cta-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Background Pattern */
+.ikram-cta-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    var(--black) 20px,
+    var(--black) 22px
+  );
+  pointer-events: none;
+}
+
+/* CTA Title */
+.ikram-cta-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  margin-bottom: 2rem;
+}
+
+/* CTA Subtitle */
+.ikram-cta-subtitle {
+  font-family: Inter, sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  color: rgba(26, 26, 26, 0.8);
+  max-width: 48rem;
+  margin: 0 auto 3rem;
+}
+
+/* CTA Buttons Group */
+.ikram-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .ikram-cta-buttons {
+    flex-direction: row;
+  }
+}
+
+/* CTA Button Variants (on gold background) */
+.ikram-cta-btn-dark {
+  background-color: var(--color-charcoal);
+  color: var(--orange);
+  border: 2px solid var(--color-charcoal);
+}
+
+.ikram-cta-btn-dark:hover {
+  background-color: var(--black);
+  border-color: var(--black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ikram-cta-btn-light {
+  background-color: var(--color-warm-grey);;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-warm-grey);;
+}
+
+.ikram-cta-btn-light:hover {
+  background-color: var(--color-warm-grey);
+  border-color: var(--color-warm-grey);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Social Proof Section */
+.ikram-cta-social-proof {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(26, 26, 26, 0.2);
+}
+
+.ikram-cta-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.ikram-cta-stat {
+  text-align: center;
+}
+
+.ikram-cta-stat-value {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-charcoal);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.ikram-cta-stat-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(26, 26, 26, 0.7);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ikram-cta {
+    padding: 4rem 1.5rem;
+  }
+
+  .ikram-cta-buttons {
+    width: 100%;
+  }
+
+  .ikram-cta-buttons .ikram-hero-cta {
+    width: 100%;
+  }
+
+  .ikram-cta-stats {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

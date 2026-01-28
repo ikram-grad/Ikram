@@ -1,0 +1,270 @@
+/* =================================================================
+   FOOTER SECTION COMPONENT STYLES
+   Dark footer with partner restaurants showcase
+   ================================================================= */
+
+/* Footer Container */
+.ikram-footer {
+  background-color: var(--black);
+  color: var(--color-warm-greyy);
+  padding: 4rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ikram-footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Footer Top Section */
+.ikram-footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+}
+
+/* Footer Brand */
+.ikram-footer-brand {
+  max-width: 350px;
+}
+
+.ikram-footer-logo {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+}
+
+.ikram-footer-tagline {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(229, 229, 229, 0.7);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Links Column */
+.ikram-footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ikram-footer-column-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.5rem;
+}
+
+.ikram-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ikram-footer-link {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(229, 229, 229, 0.7);
+  text-decoration: none;
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+  position: relative;
+  width: fit-content;
+}
+
+.ikram-footer-link::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+  color: var(--orange);
+}
+
+.ikram-footer-link:hover {
+  color: var(--orange);
+  padding-left: 20px;
+}
+
+.ikram-footer-link:hover::before {
+  opacity: 1;
+}
+
+/* Partner Restaurants Section */
+.ikram-partner-restaurants {
+  padding: 4rem 0 3rem;
+}
+
+.ikram-partner-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-warm-grey);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.ikram-partner-subtitle {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  color: rgba(229, 229, 229, 0.6);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Partner Cards Grid */
+.ikram-partner-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.ikram-partner-card {
+  background-color: var(--color-charcoal);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-in-out);
+  border: 1px solid rgba(229, 229, 229, 0.1);
+  cursor: pointer;
+}
+
+.ikram-partner-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--orange);
+  box-shadow: 0 12px 24px rgba(200, 141, 0, 0.2);
+}
+
+.ikram-partner-card-header {
+  background: linear-gradient(135deg, var(--ikram-charcoal) 0%, #000 100%);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--orange);
+}
+
+.ikram-partner-name {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-warm-grey);
+  margin-bottom: 0.5rem;
+}
+
+.ikram-partner-since {
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(229, 229, 229, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ikram-partner-card-body {
+  padding: 1.5rem;
+}
+
+.ikram-partner-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.1);
+}
+
+.ikram-partner-stat:last-child {
+  border-bottom: none;
+}
+
+.ikram-partner-stat-label {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(229, 229, 229, 0.6);
+}
+
+.ikram-partner-stat-value {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -0.02em;
+}
+
+.ikram-partner-stat-unit {
+  font-size: 0.875rem;
+  margin-left: 0.25rem;
+  color: rgba(200, 141, 0, 0.7);
+}
+
+/* Footer Bottom */
+.ikram-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(229, 229, 229, 0.1);
+}
+
+.ikram-footer-copyright {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(229, 229, 229, 0.5);
+}
+
+.ikram-footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ikram-footer-social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(229, 229, 229, 0.1);
+  color: var(--color-warm-grey);
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+  text-decoration: none;
+}
+
+.ikram-footer-social-link:hover {
+  background-color: var(--orange);
+  color: var(--black);
+  transform: translateY(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ikram-footer {
+    padding: 3rem 1rem 2rem;
+  }
+
+  .ikram-footer-top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ikram-partner-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .ikram-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

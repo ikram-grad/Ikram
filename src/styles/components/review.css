@@ -1,0 +1,189 @@
+/* =================================================================
+   REVIEWS COMPONENT STYLES
+   Customer reviews and ratings display
+   ================================================================= */
+
+/* Review Container */
+.ikram-review {
+  padding: 1rem;
+  background-color: rgba(200, 141, 0, 0.05);
+  border-left: 3px solid var(--ikram-mustard-gold);
+  margin-top: 1rem;
+}
+
+.ikram-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.ikram-review-user-info {
+  flex: 1;
+}
+
+.ikram-review-user-name {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ikram-jet-black);
+  margin-bottom: 0.25rem;
+}
+
+.ikram-review-date {
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  color: rgba(26, 26, 26, 0.5);
+}
+
+/* Star Rating */
+.ikram-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ikram-review-star {
+  width: 1rem;
+  height: 1rem;
+  color: var(--ikram-mustard-gold);
+  fill: var(--ikram-mustard-gold);
+}
+
+.ikram-review-star.empty {
+  fill: none;
+  color: rgba(26, 26, 26, 0.2);
+}
+
+.ikram-review-rating-value {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ikram-jet-black);
+  margin-left: 0.5rem;
+}
+
+/* Review Content */
+.ikram-review-comment {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(26, 26, 26, 0.8);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* No Review State */
+.ikram-review-empty {
+  padding: 1rem;
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.5);
+  background-color: rgba(229, 229, 229, 0.5);
+  border: 1px dashed rgba(26, 26, 26, 0.2);
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Review Stats Summary */
+.ikram-review-summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(200, 141, 0, 0.1);
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.ikram-review-summary-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ikram-review-summary-stars {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.ikram-review-summary-value {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ikram-jet-black);
+}
+
+.ikram-review-summary-text {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.6);
+}
+
+/* Review Badge */
+.ikram-review-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--ikram-mustard-gold);
+  color: var(--ikram-jet-black);
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.ikram-review-badge svg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Review Toggle Button */
+.ikram-review-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  color: var(--ikram-jet-black);
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-in-out);
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.ikram-review-toggle:hover {
+  background-color: rgba(200, 141, 0, 0.1);
+  border-color: var(--ikram-mustard-gold);
+}
+
+.ikram-review-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s var(--ease-in-out);
+}
+
+.ikram-review-toggle.expanded svg {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .ikram-review-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ikram-review-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

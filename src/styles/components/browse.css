@@ -1,0 +1,543 @@
+/* =================================================================
+   BROWSE MEALS COMPONENT STYLES
+   Premium meal cards with Gourmet Industrial design
+   ================================================================= */
+
+/* Browse Section Container */
+.ikram-browse {
+  padding: 8rem 2rem;
+  background-color: var(--color-warm-grey);
+  position: relative;
+}
+
+.ikram-browse-container {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Browse Header */
+.ikram-browse-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.ikram-browse-header-content {
+  flex: 1;
+}
+
+.ikram-browse-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.ikram-browse-subtitle {
+  font-family: Inter, sans-serif;
+  font-size: 1.125rem;
+  color: rgba(26, 26, 26, 0.7);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ikram-browse-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(200, 141, 0, 0.2);
+  color: var(--orange);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+/* Refresh Button */
+.ikram-browse-refresh {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-charcoal);
+  color: #fff;
+  border: none;
+  font-family: Oswald, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+  border-radius: 2px;
+}
+
+.ikram-browse-refresh:hover:not(:disabled) {
+  background-color: var(--black);
+  transform: translateY(-2px);
+}
+
+.ikram-browse-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.ikram-browse-loading {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.ikram-browse-spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 4px solid var(--orange);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.ikram-browse-loading-text {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  color: rgba(26, 26, 26, 0.7);
+}
+
+/* Empty State */
+.ikram-browse-empty {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  padding: 4rem;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.ikram-browse-empty-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.ikram-browse-empty-text {
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  color: rgba(26, 26, 26, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+/* Meal Grid */
+.ikram-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+/* Meal Card */
+.ikram-meal-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.ikram-meal-card:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Meal Image Container */
+.ikram-meal-image-container {
+  position: relative;
+  height: 20rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  background-color: rgba(229, 229, 229, 0.3);
+}
+
+.ikram-meal-image-wrapper {
+  position: absolute;
+  inset: 0;
+  transform: translateY(1rem);
+  transition: transform 0.7s ease-out;
+}
+
+.ikram-meal-card:hover .ikram-meal-image-wrapper {
+  transform: translateY(0);
+}
+
+.ikram-meal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease-out;
+}
+
+.ikram-meal-card:hover .ikram-meal-image {
+  transform: scale(1.05);
+}
+
+/* Meal Badges */
+.ikram-meal-badge {
+  position: absolute;
+  top: 1rem;
+  padding: 0.25rem 0.75rem;
+  font-family: Oswald, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.ikram-meal-badge-quantity {
+  right: 1rem;
+  background-color: #EF4444;
+  color: #fff;
+}
+
+.ikram-meal-badge-savings {
+  left: 1rem;
+  background-color: var(--orange);
+  color: #fff;
+}
+
+/* Meal Content */
+.ikram-meal-restaurant {
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.6);
+  margin-bottom: 0.5rem;
+}
+
+.ikram-meal-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 500 !important;
+  letter-spacing: -0.02em;
+  color: var(--ikram-jet-black);
+  margin-bottom: 1rem;
+  transition: all 0.3s var(--ease-in-out);
+  -webkit-text-stroke: 0px #000000;
+}
+
+.ikram-meal-card:hover .ikram-meal-title {
+  transform: translateX(4px);
+}
+
+/* Meal Info */
+.ikram-meal-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ikram-meal-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.6);
+}
+
+.ikram-meal-info-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Meal Price Section */
+.ikram-meal-price-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ikram-meal-price-wrapper {
+  flex: 1;
+}
+
+.ikram-meal-price-original {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.ikram-meal-price-original span {
+  text-decoration: line-through;
+}
+
+.ikram-meal-price-discounted {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+/* Meal Reserve Button */
+.ikram-meal-reserve {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--orange);
+  color: var(--black);
+  border: none;
+  font-family: Oswald, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.ikram-meal-reserve-text {
+  position: relative;
+  z-index: 10;
+}
+
+.ikram-meal-reserve-bg {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-charcoal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-in-out);
+}
+
+.ikram-meal-reserve:hover {
+  box-shadow: 0 4px 12px rgba(200, 141, 0, 0.3);
+}
+
+.ikram-meal-reserve:hover .ikram-meal-reserve-bg {
+  transform: scaleX(1);
+}
+
+.ikram-meal-reserve:hover .ikram-meal-reserve-text {
+  color: var(--orange);
+}
+
+/* Magic Box Card */
+.ikram-magic-box-card {
+  position: relative;
+  background-color: var(--orange);
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  padding: 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.ikram-magic-box-card:hover {
+  background-color: #B07D00;
+  box-shadow: 0 16px 32px rgba(200, 141, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Magic Box Pattern */
+.ikram-magic-box-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+}
+
+.ikram-magic-box-circle-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16rem;
+  height: 16rem;
+  border: 8px solid var(--color-charcoal);
+  border-radius: 50%;
+  transform: translate(8rem, -8rem);
+}
+
+.ikram-magic-box-circle-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 12rem;
+  height: 12rem;
+  border: 8px solid var(--color-charcoal);
+  border-radius: 50%;
+  transform: translate(-6rem, 6rem);
+}
+
+/* Magic Box Content */
+.ikram-magic-box-content {
+  position: relative;
+  z-index: 10;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.ikram-magic-box-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.ikram-magic-box-title {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.ikram-magic-box-subtitle {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  text-align: center;
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.ikram-magic-box-description {
+  position: relative;
+  z-index: 10;
+  font-family: Inter, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(26, 26, 26, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.ikram-magic-box-quantity {
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-charcoal);
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Magic Box Price Section */
+.ikram-magic-box-price-section {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ikram-magic-box-price-original {
+  font-family: Inter, sans-serif;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.7);
+  margin-bottom: 0.25rem;
+}
+
+.ikram-magic-box-price-original span {
+  text-decoration: line-through;
+}
+
+.ikram-magic-box-price-discounted {
+  font-family: Oswald, Impact, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+}
+
+/* Magic Box Button */
+.ikram-magic-box-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-charcoal);
+  color: var(--orange);
+  border: none;
+  font-family: Oswald, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--default-transition-duration) var(--ease-in-out);
+}
+
+.ikram-magic-box-button:hover {
+  background-color: var(--black);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ikram-browse-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ikram-browse {
+    padding: 4rem 1rem;
+  }
+
+  .ikram-browse-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .ikram-browse-refresh {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ikram-browse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ikram-meal-price-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ikram-meal-reserve {
+    width: 100%;
+  }
+}
